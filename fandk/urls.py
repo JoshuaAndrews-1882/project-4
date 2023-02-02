@@ -22,7 +22,12 @@ def designs(request):
     return HttpResponse('Here are the designs')
 
 
+def design(request):
+    return HttpResponse('User design')
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('designs/', designs, name="designs"),
+    path('design/', design, name="design"),
 ]
