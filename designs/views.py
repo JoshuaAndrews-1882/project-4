@@ -1,3 +1,10 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+
+def designs(request):
+    return HttpResponse('Here are the designs')
+
+
+def design(request, pk):
+    return HttpResponse('User design')
