@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.http import HttpResponse
+
+
+def designs(request):
+    return HttpResponse('Here are the designs')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('designs/', designs, name="designs"),
 ]
