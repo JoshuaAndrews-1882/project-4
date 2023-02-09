@@ -7,4 +7,4 @@ def designs(request):
 
 
 def design(request, pk):
-    return render(request, design.html)
+    return render(request, 'design.html')
