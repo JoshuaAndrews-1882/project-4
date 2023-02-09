@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<h1>Design Form</h1>
+
+<form action="POST">
+    {% csrf_token %}
+    <input type="submit">
+</form>
+
+{% endblock %}

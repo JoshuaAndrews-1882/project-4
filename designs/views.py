@@ -12,3 +12,7 @@ def designs(request):
 def design(request, pk):
     design = Design.objects.get(id=pk)
     return render(request, 'designs/design.html', {'design': design})
+
+
+def createDesign(request):
+    return render(request, "designs/design_form.html")
