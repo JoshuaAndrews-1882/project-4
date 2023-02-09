@@ -3,8 +3,8 @@ from django.http import HttpResponse
 
 
 def designs(request):
-    return HttpResponse('Here are the designs')
+    return render(request, 'designs.html')
 
 
 def design(request, pk):
-    return HttpResponse('User design')
+    return render(request, design.html)
