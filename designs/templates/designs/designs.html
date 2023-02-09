@@ -2,13 +2,21 @@
 
 {% block content %}
 
-<ul>
+<table>
+    <tr>
+        <th>Design</th>
+        <th>Votes</th>
+        <th>Liked Ratio</th>
+    </tr>
     {% for design in designs %}
-    <li>
-        <a href="{% url 'design' design.id %}">{{design.title}}</a>
-    </li>
+        <tr>
+            <td>{{design.title}}</td>
+            <td>{{design.rating_total}}</td>
+            <td>{{design.rating_ratio}}%</td>
+            <td><a href="{% url 'design' design.id %}">View</a></td>
+        </tr>
     {% endfor %}
-</ul>
+</table>
 
 
 {% endblock content%}
