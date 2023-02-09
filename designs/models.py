@@ -18,8 +18,8 @@ class Design(models.Model):
 
 class Comment(models.Model):
     RATING_TYPE = (
-        ('like', 'Liked'),
-        ('dislike', 'Disliked')
+        ('like', 'Like'),
+        ('dislike', 'Dislike')
     )
     #user = 
     design = models.ForeignKey(Design, on_delete=models.CASCADE)
@@ -28,7 +28,7 @@ class Comment(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     def __str__(self):
-        return self.value
+        return self.rating
 
 
 class Tag(models.Model):
