@@ -2,8 +2,13 @@
 
 {% block content %}
 
-<h1>Designs</h1>
-
+<ul>
+    {% for design in designs %}
+    <li>
+        <a href="{% url 'design' design.id %}">{{design.title}}</a>
+    </li>
+    {% endfor %}
+</ul>
 
 
 {% endblock content%}
