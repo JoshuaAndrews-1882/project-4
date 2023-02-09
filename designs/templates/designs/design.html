@@ -5,6 +5,12 @@
 
 <h1>{{design.title}}</h1>
 <br>
+{% for tag in design.tags.all %}
+<span>{{tag}}</span>
+{% endfor %}
+<br>
 <p>{{design.description}}</p>
+<hr>
+
 
 {% endblock content%}
