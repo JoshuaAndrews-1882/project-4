@@ -7,10 +7,9 @@ class Design(models.Model):
     title = models.CharField(max_length=250)
     description = models.TextField(null=True, blank=True)
     design_link = models.CharField(max_length=2500, null=True, blank=True)
-    tags = models.ManyToManyField('Tags', blank=True)
+    tags = models.ManyToManyField('Tag', blank=True)
     rating_total = models.IntegerField(default=0, null=True, blank=True)
     rating_ratio = models.IntegerField(default=0, null=True, blank=True)
-    created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     def __str__(self):
@@ -26,16 +25,14 @@ class Comment(models.Model):
     design = models.ForeignKey(Design, on_delete=models.CASCADE)
     text = models.TextField(null=True, blank=True)
     rating = models.CharField(max_length=250, choices=RATING_TYPE)
-    created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     def __str__(self):
         return self.value
 
 
-class Tags(models.Model):
-    name = models.Charfield(max_length=250)
-    created = models.DateTimeField(auto_now_add=True)
+class Tag(models.Model):
+    name = models.CharField(max_length=250)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     def __str__(self):
